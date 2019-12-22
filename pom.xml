@@ -10,10 +10,24 @@
   <version>1.0-SNAPSHOT</version>
 
   <properties>
-    <vertx.version>3.8.3</vertx.version>
+    <vertx.version>3.8.4</vertx.version>
     <main.verticle>io.vertx.starter.MainVerticle</main.verticle>
   </properties>
 
+<!--  <profiles>-->
+<!--    <profile>-->
+<!--      <id>allow-snapshots</id>-->
+<!--      <activation><activeByDefault>true</activeByDefault></activation>-->
+<!--      <repositories>-->
+<!--        <repository>-->
+<!--          <id>snapshots-repo</id>-->
+<!--          <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--          <releases><enabled>true</enabled></releases>-->
+<!--          <snapshots><enabled>true</enabled></snapshots>-->
+<!--        </repository>-->
+<!--      </repositories>-->
+<!--    </profile>-->
+<!--  </profiles>-->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -42,7 +56,68 @@
       <artifactId>vertx-unit</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-web-templ-freemarker</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.github.rjeschke</groupId>
+      <artifactId>txtmark</artifactId>
+      <version>0.13</version>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-jdbc-client</artifactId>
+      <version>${vertx.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <version>2.3.4</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
+    </dependency>
   </dependencies>
+
+
+
+
+
+<!--  <dependencies>-->
+<!--    <dependency>-->
+<!--      <groupId>io.vertx</groupId>-->
+<!--      <artifactId>vertx-core</artifactId>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>junit</groupId>-->
+<!--      <artifactId>junit</artifactId>-->
+<!--      <version>4.12</version>-->
+<!--      <scope>test</scope>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>io.vertx</groupId>-->
+<!--      <artifactId>vertx-unit</artifactId>-->
+<!--      <scope>test</scope>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>io.vertx</groupId>-->
+<!--      <artifactId>vertx-ext-parent</artifactId>-->
+<!--      <version>34</version>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash;    <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;      <groupId>io.vertx</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;      <artifactId>vertx-core</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;      <version>4.0.0-milestone2</version>&ndash;&gt;-->
+<!--&lt;!&ndash;    </dependency>&ndash;&gt;-->
+
+<!--  </dependencies>-->
 
   <build>
     <pluginManagement>
